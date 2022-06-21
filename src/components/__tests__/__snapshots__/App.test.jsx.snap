@@ -40,7 +40,9 @@ exports[`App component should render without crashing 1`] = `
         <div
           class="book-list MuiBox-root css-0"
         >
-          Will display all books here.
+          <div
+            class="book-list MuiBox-root css-0"
+          />
         </div>
       </div>
     </div>

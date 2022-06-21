@@ -17,3 +17,14 @@
 .book-list {
     width: 80%;
 }
+
+.book-list-item-paper {
+    padding: 10px;
+    display: flex;
+    width: 80%;
+}
+
+.book-image {
+    margin-right: 10px;
+    width: 100%;
+}

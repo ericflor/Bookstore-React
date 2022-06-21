@@ -5,8 +5,11 @@ const getBooksAction = () => async (dispatch) => {
   try {
 
     const books = await getBookService();
-    dispatch({ type: "GET_BOOKS", payload: books.data });
     
+    dispatch({ 
+      type: "GET_BOOKS", 
+      payload: books.data });
+
   } catch (error) {
     console.log(error);
   }

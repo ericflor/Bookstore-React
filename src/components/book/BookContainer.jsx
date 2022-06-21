@@ -5,6 +5,7 @@ import "./Books.css";
 import { useDispatch, useSelector } from "react-redux";
 import getBooksAction from "../modules/book/bookAction";
 import { getBooksSelector } from "../modules/book/bookSelector";
+import BookList from "./BookList";
 
 const BookContainer = () => {
 
@@ -19,7 +20,9 @@ const BookContainer = () => {
   return (
     <Box className="book-container">
       <BookFilter />
-      <Box className="book-list">Will display all books here.</Box>
+      <Box className="book-list">
+        <BookList books={books}></BookList>
+      </Box>
     </Box>
   );
 };
