@@ -1,0 +1,19 @@
+.book-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.book-filter {
+    width: 20%;
+    height: 500px;
+}
+
+.book-filter-paper {
+    width: 100%;
+    height: 100%;
+}
+
+.book-list {
+    width: 80%;
+}

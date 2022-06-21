@@ -1,0 +1,1 @@
+export const getBooksSelector = (rootReduer) => rootReduer.bookReducer.books;

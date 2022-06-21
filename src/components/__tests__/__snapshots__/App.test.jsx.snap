@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should render without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="MuiBox-root css-0"
+    >
+      <header
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-dense css-10ltm04-MuiToolbar-root"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-1qp5wg9-MuiTypography-root"
+          >
+            Bookstore
+          </h6>
+        </div>
+      </header>
+    </div>
+    <div
+      class="MuiBox-root css-1afphko"
+    >
+      <div
+        class="book-container MuiBox-root css-0"
+      >
+        <div
+          class="book-filter MuiBox-root css-0"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 book-filter-paper css-1ps6pg7-MuiPaper-root"
+          >
+            book filter
+          </div>
+        </div>
+        <div
+          class="book-list MuiBox-root css-0"
+        >
+          Will display all books here.
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
