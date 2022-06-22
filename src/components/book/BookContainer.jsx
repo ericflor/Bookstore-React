@@ -3,7 +3,7 @@ import { Box, Skeleton } from "@mui/material";
 import BookFilter from "./BookFilter";
 import "./Books.css";
 import { useDispatch, useSelector } from "react-redux";
-import getBooksAction from "../modules/book/bookAction";
+import {getBooksAction} from "../modules/book/bookAction";
 import { getBooksSelector, getBookPromiseSelector } from "../modules/book/bookSelector";
 import BookList from "./BookList";
 

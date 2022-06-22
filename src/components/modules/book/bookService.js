@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const getBookService = () => {
+export const getBookService = () => {
   return axios.get(`http://localhost:8080/books`);
 }
 
-export default getBookService;
+export const getBooksByTitleService = (title) => {
+  return axios.get(`http://localhost:8080/books/${title}`);
+}

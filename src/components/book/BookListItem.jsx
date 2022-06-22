@@ -25,14 +25,14 @@ const BookListItem = ({ book }) => {
                 <Avatar 
                 variant="square" 
                 className="book-image" 
-                src="https://static.parade.com/wp-content/uploads/2021/11/harry-potter-hogwarts-freebie-ftr.jpeg"
+                // src="https://static.parade.com/wp-content/uploads/2021/11/harry-potter-hogwarts-freebie-ftr.jpeg"
                 sx={{ width:180, height:200 }}
-                ></Avatar>
+                >{book.title}</Avatar>
                 <Box>
-                    <Typography variant="h2" mb={1}>
+                    <Typography variant="h5" mb={1}>
                         {book.title}
                     </Typography>
-                    <Typography variant="h5" mb={1}>
+                    <Typography mb={1}>
                         {book.description}
                     </Typography>
                     <Typography mb={1}>

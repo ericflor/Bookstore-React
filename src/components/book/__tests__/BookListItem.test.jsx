@@ -17,9 +17,9 @@ describe("BookListItem", () => {
 
         const { getByText } = render(
             <BookListItem book={book}></BookListItem>
-        )
+        );
 
-        expect(screen.getByText('test title')).toBeInTheDocument();
+        expect(screen.getAllByText('test title')).toBeInTheDocument();
 
         expect(screen.getByText('test description')).toBeInTheDocument();
 
