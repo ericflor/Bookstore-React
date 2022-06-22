@@ -26,9 +26,9 @@ describe('BookActions', () => {
 
         const actions = store.getActions();
 
-        expect(actions.length).toBe(1);
+        expect(actions.length).toBe(3);
 
-        expect(actions[0]).toEqual({
+        expect(actions[1]).toEqual({
 
             type:'GET_BOOKS',
             payload: [{

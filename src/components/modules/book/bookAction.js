@@ -4,14 +4,30 @@ const getBooksAction = () => async (dispatch) => {
 
   try {
 
+    dispatch({
+      type: "BOOK_LIST_PENDING"
+    })
+
     const books = await getBookService();
     
     dispatch({ 
       type: "GET_BOOKS", 
-      payload: books.data });
+      payload: books.data 
+    });
 
-  } catch (error) {
+    dispatch({
+      type: "BOOK_LIST_FULFILLED"
+    })
+
+  } 
+  
+  catch (error) {
+
     console.log(error);
+
+    dispatch({
+      type: "BOOK_LIST_ERROR"
+    })
   }
 }
 
