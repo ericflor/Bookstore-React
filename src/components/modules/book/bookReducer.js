@@ -17,7 +17,7 @@ const bookReducer = (state = INITIAL_BOOK_REDUCER_STATE, action) => {
             }
         }
 
-        case "BOOK _LIST_PENDING": {
+        case "BOOK_LIST_PENDING": {
             return {
                 ...state,
                 promise: {isPending: true, isFulfilled: false, isErrorOcurred: false }
