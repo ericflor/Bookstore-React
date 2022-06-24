@@ -2,6 +2,7 @@ import configureStore from 'redux-mock-store';
 import reduxThunk from 'redux-thunk';
 import axios from 'axios';
 import {getBooksAction, getBooksByTitle} from '../bookAction';
+import bookReducer, { INITIAL_BOOK_REDUCER_STATE } from '../bookReducer';
 
 jest.mock('axios');
 const middleware = [reduxThunk];
@@ -63,6 +64,28 @@ describe('BookActions', () => {
                 releaseYear: 2020 
             }]
         })
+    })
+
+    it('should be able to dispatch error action', async () => {
+
+        const store = mockStore({});
+
+        axios.get.mockImplementation(() => {
+
+            throw new Error();
+
+        })
+
+        await store.dispatch(getBooksByTitle("test titttle"));
+
+        const actions = store.getActions();
+
+        expect(actions.length).toEqual(3);
+
+        expect(actions[1]).toEqual({
+            type: "BOOK_LIST_ERROR"
+        })
+
     })
 
  });

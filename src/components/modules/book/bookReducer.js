@@ -10,7 +10,14 @@ export const INITIAL_BOOK_REDUCER_STATE = {
 const bookReducer = (state = INITIAL_BOOK_REDUCER_STATE, action) => {
     switch (action.type) {
         
-        case "GET_BOOKS":{
+        case "GET_BOOKS": {
+            return {
+                ...state,
+                books: action.payload
+            }
+        }
+
+        case "BOOKS_BY_TITLE": {
             return {
                 ...state,
                 books: action.payload
