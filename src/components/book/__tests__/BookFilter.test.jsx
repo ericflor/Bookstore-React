@@ -13,6 +13,8 @@ describe('Book Filter', () => {
 
         const {getByLabelText, getByText} = renderWithRedux(<BookFilter></BookFilter>, {})
 
+        getBooksByTitle.mockImplementation(() => dispatch => {})
+
         const textField = screen.getByLabelText('Enter book title')
 
         fireEvent.change(textField, {target: {value: 'test-title'}})
