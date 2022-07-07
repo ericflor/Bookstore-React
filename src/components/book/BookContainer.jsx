@@ -3,7 +3,7 @@ import { Box, Skeleton } from "@mui/material";
 import BookFilter from "./BookFilter";
 import "./Books.css";
 import { useDispatch, useSelector } from "react-redux";
-import {getBooksAction} from "../modules/book/bookAction";
+import { getBooksAction } from "../modules/book/bookAction";
 import { getBooksSelector, getBookPromiseSelector } from "../modules/book/bookSelector";
 import BookList from "./BookList";
 
@@ -17,7 +17,7 @@ const BookContainer = () => {
 
   const books = useSelector(getBooksSelector);
 
-  const bookPromise = useSelector(getBookPromiseSelector);
+  const bookPromise = useSelector(getBookPromiseSelector);  
 
   return (
     <Box className="book-container">
@@ -35,7 +35,7 @@ const BookContainer = () => {
             </Box>
         )}
         {
-          bookPromise.isErrorOcurred && (<div data-testid="book-error-message">Error Message</div>
+          bookPromise.isErrorOcurred && (<div data-testid="book-error-message" className="book-error-message">Sorry, we can't load the books bro</div>
         )}
         {
           bookPromise.isFulfilled && <BookList books={books}></BookList>

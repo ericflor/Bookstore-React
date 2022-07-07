@@ -1,0 +1,19 @@
+.login-box {
+    display: flex;
+    justify-content: center;
+}
+
+.login-paper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.login {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.email {
+    margin-inline: 20%;
+}

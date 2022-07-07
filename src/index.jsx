@@ -7,10 +7,27 @@ import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import reducers from '/Users/m_2171923/Desktop/UDEMY/REACT_BOOKSTORE/bookstoreclient/src/components/modules/index.js';
+import axios from 'axios';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+axios.interceptors.request.use(
+  (config) => {
+
+    const token = window.localStorage.getItem('bookstore-token')
+    
+    if (token != null) {
+      config.headers.Authorization = token;
+    }
+
+    return config;
+  }, 
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 root.render(
   <Provider store={

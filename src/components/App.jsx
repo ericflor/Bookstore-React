@@ -1,17 +1,24 @@
-import './App.css';
-import axios from 'axios';
-import Layout from './layout/Layout';
-import BookContainer from './book/BookContainer';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import BookContainer from "./book/BookContainer";
+import Login from "./user/Login";
+import { SnackbarProvider } from "notistack";
 
 const App = () => {
-
-  axios(`http://localhost:8080/books`).then(response => {console.log(response.data)});
-
   return (
-    <Layout>
-      <BookContainer></BookContainer>
-    </Layout>
+    <SnackbarProvider maxSnack={3}>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/login" element={<Login />}></Route>
+            <Route exact path="/" element={<BookContainer />}></Route>
+          </Routes>
+        </Layout>
+      </Router>
+    </SnackbarProvider>
   );
-}
+};
 
 export default App;

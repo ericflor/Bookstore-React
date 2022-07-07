@@ -6,7 +6,7 @@ import bookReducer, { INITIAL_BOOK_REDUCER_STATE } from '../bookReducer';
 
 jest.mock('axios');
 const middleware = [reduxThunk];
-const mockStore = configureStore([reduxThunk]);
+const mockStore = configureStore(middleware);
 
 describe('BookActions', () => { 
 
