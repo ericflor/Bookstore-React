@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import reduxThunk from 'redux-thunk';
 import axios from 'axios';
-import { loginAction } from '../userAction';
+import { loginAction, registerAction } from '../userAction';
 
 jest.mock('axios');
 const middleware = [reduxThunk];
@@ -27,12 +27,44 @@ describe('login action', () => {
 
         const actions = store.getActions()
 
-        expect(actions.length).toEqual(1);
+        expect(actions.length).toEqual(3);
 
-        expect(actions[0]).toEqual({
+        expect(actions[1]).toEqual({
             type: 'USER_LOGIN',
             payload: {
                 token: 'jwt'
+            }
+        })
+    })
+
+    it('should dispatch user action', () => {
+
+        axios.post.mockImplementation(() => {
+            return Promise.resolve({
+                data: 'some uuid'
+            })
+        })
+
+        const store = mockStore({});
+
+        store.dispatch(registerAction({
+            id: "some uuid",
+            name: "bob",
+            email: "bob@email.com",
+            password: "password"
+        }))
+
+        const actions = store.getActions()
+
+        expect(actions.length).toEqual(3);
+
+        expect(actions[1]).toEqual({
+            type: 'USER_REGISTER',
+            payload: {
+                id: "some uuid",
+                name: "bob",
+                email: "bob@email.com",
+                password: "password"
             }
         })
     })

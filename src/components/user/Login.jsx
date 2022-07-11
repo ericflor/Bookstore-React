@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Paper, TextField, Typography, Link } from "@mui/material";
 import './Login.css'
 import { useFormik } from "formik";
 import * as yup from 'yup';
@@ -8,6 +8,7 @@ import { loginAction } from "../modules/user/userAction";
 import { getUserPromise } from "../modules/user/userSelector";
 import { useSnackbar } from "notistack";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
     email: yup.string('Enter your email').email('Enter a valid email').required('Email is required'),
@@ -22,6 +23,8 @@ const Login = () => {
 
     const { enqueueSnackbar } = useSnackbar();
 
+    const navigate = useNavigate();
+
     useEffect(() => {
 
         if(loginPromise.isErrorOcurred){
@@ -29,14 +32,15 @@ const Login = () => {
                 variant: 'error'
             })
         }
-        
+
         else if(loginPromise.isFulfilled){
             enqueueSnackbar('Login Successful', {
                 variant: 'success'
             })
+            navigate("/")
         }
         
-    }, [loginPromise, enqueueSnackbar]);
+    }, [loginPromise, enqueueSnackbar, navigate]);
 
     const formik = useFormik({
         initialValues: {
@@ -48,6 +52,10 @@ const Login = () => {
             dispatch(loginAction(values.email, values.password))
         }
     })
+
+    const handleRegister = () => {
+        navigate("/register")
+    }
 
     return(
 
@@ -90,6 +98,8 @@ const Login = () => {
                         color="primary"
                         disabled={loginPromise.isPending}
                     >Login</Button>
+                    <br/>
+                    <Link component="button" variant="body2" onClick={handleRegister}>Register</Link>
                 </Paper>
             </Box>
         </form>

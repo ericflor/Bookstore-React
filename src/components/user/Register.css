@@ -1,0 +1,19 @@
+.register-box {
+    display: flex;
+    justify-content: center;
+}
+
+.register-paper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.register {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.register-button {
+    margin-top: 50px;
+}

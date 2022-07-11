@@ -1,0 +1,9 @@
+.login-link {
+    text-align: end;
+    display: flex;
+    margin-left: 200px;
+}
+
+.register-link {
+    margin-left: 200px;
+}
