@@ -35,7 +35,7 @@ const BookContainer = () => {
             </Box>
         )}
         {
-          bookPromise.isErrorOcurred && (<div data-testid="book-error-message" className="book-error-message">Sorry, we can't load the books bro</div>
+          bookPromise.isErrorOcurred && (<div data-testid="book-error-message" className="book-error-message">Sorry, you need to be logged in to see the books bro</div>
         )}
         {
           bookPromise.isFulfilled && <BookList books={books}></BookList>
